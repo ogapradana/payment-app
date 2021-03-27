@@ -1,0 +1,52 @@
+.custom-pagination{
+    float: right;
+  
+    .page-number{
+        display: inline-block;
+        text-align: center;
+        outline: none;
+        padding: 3px;
+        background: #ffffff;
+        border: 1px solid #C8DDEA;
+    
+        span{
+            margin-top: 3px;
+            max-height: 24px;
+        }
+    }
+  
+  
+    .page-number.current{
+        background-color: #ffd7d7!important;
+  
+        span{
+            margin-top: 3px;
+            max-height: 24px;
+        }
+        
+    }
+  
+    .page-number span{
+        display: block;
+        width: 28px;
+        height: 28px;
+        font-family: 'Poppins', sans-serif!important;
+        font-size: 14px;
+        cursor: pointer;
+    }
+  
+    .pagination-previous,.pagination-next{
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        padding: 9px 10px 8px 10px;
+        background: #ffffff;
+        border: 1px solid #C8DDEA;
+    }
+  
+    button:disabled{
+        background: #cccccc!important;
+        color: #ffffff;
+    }
+  }

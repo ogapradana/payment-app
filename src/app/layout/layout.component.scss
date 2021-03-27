@@ -1,0 +1,346 @@
+nav{
+    background: #ffffff;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    -webkit-box-shadow: 0px 6px 15px -3px #c2c2c287; 
+    box-shadow: 0px 6px 15px -3px #c2c2c287;
+  
+  }
+  nav:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  nav .logo{
+    float: left;
+    color: #666666;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+  
+    .vega-logo{
+      width: 30px;
+    }
+  }
+  nav ul{
+    float: right;
+    margin-right: 15px;
+    list-style: none;
+    position: relative;
+  }
+  nav ul li:hover{
+      background-color: #ff1f27;
+  }
+  nav ul li{
+    display: inline-block;
+    background: #ffffff;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: rgb(0, 0, 0);
+    line-height: 70px;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  nav ul li a:hover{
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+  }
+  nav ul ul li a:hover{
+    box-shadow: none;
+  }
+  nav ul ul{
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+  }
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul li{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+  }
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  nav ul ul ul li{
+    position: relative;
+    top: -60px;
+    left: 150px;
+  }
+  .show,.icon,input{
+    display: none;
+  }
+  .fa-plus{
+    font-size: 15px;
+    margin-left: 40px;
+  }
+  .nav-container{
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form-control{
+    width: auto;
+    float: right;
+    margin-top: 17px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #e7e7e7;
+    color: #5f5f5f;
+  }
+  
+  .profile{
+    padding: 5px 25px;
+    background-color: #E11F27;
+    border-radius: 50px;
+    color: #ffffff;
+    width: auto;
+    margin-right: 60px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+  
+    img{
+      width: 30px;
+      float: left;
+      margin-top: 8px;
+      margin-right: 15px;
+    }
+  
+    .text-wrapper{
+      float: right;
+      font-size: 16px;
+      margin-bottom: 0;
+      
+      label{
+        display: block;
+        font-size: 9px;
+      }
+    }
+  
+    mat-icon{
+      margin-top: 7px;
+      margin-left: 15px;
+      float: right;
+    }
+  }
+  
+  ::ng-deep .mat-menu{
+    .mat-menu-content{
+      padding-top: 0!important;
+    }
+  }
+    
+  .menu-profile{
+    display: none;
+    padding: 10px;
+    background-color: #E11F27;
+    color: #ffffff;
+  
+    label{
+      display: block;
+      font-size: 9px;
+    }
+  }
+  
+  .profile-trigger{
+    display: none;
+    float: right;
+    margin-top: 15px;
+    font-size: 60px;  
+  
+    mat-icon{
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media all and (max-width: 1050px) {
+    .profile{
+      display: none;
+    }
+  
+    .menu-profile{
+      display: block;
+    }
+  
+    .profile-trigger{
+      display: initial;
+    }
+  }
+  
+  @media all and (max-width: 968px) {
+    .nav-container{
+      width: auto!important;
+    }
+  
+    .form-control{
+      position: absolute;
+      right: 105px;
+    }
+  
+    .profile-trigger{
+      position: absolute;
+      right: 75px;
+    }
+  
+    ol, ul{
+      width: 100%!important;
+      margin-right: 10px;
+    }
+    nav ul{
+      margin-right: 0px;
+      float: left;
+    }
+    nav .logo{
+      padding-left: 30px;
+    }
+    .show + a, ul{
+      display: none;
+    }
+    nav ul li,nav ul ul li{
+      display: block;
+      width: 100%;
+    }
+    nav ul li a:hover{
+      box-shadow: none;
+    }
+    .show{
+      display: block;
+      color: black;
+      font-size: 14px;
+      padding: 0 15px;
+      line-height: 70px;
+      cursor: pointer;
+    }
+    .show:hover{
+      color: white;
+    }
+    .icon{
+      display: block;
+      color: black;
+      position: absolute;
+      top: 0;
+      right: 40px;
+      line-height: 70px;
+      cursor: pointer;
+      font-size: 25px;
+    }
+    nav ul ul{
+      top: 50px;
+      border-top: 0px;
+      float: none;
+      position: static;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+    }
+    nav ul ul a{
+      color: black;
+      padding-left: 40px;
+    }
+    nav ul ul ul a{
+      padding-left: 80px;
+    }
+    nav ul ul ul li{
+      position: static;
+    }
+    [id^=btn]:checked + ul{
+      display: block;
+    }
+    nav ul ul li{
+      border-bottom: 0px;
+    }
+    span.cancel:before{
+      content: '\f00d';
+    }
+  }
+  .content{
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  header{
+    font-size: 35px;
+    font-weight: 600;
+    padding: 10px 0;
+  }
+  p{
+    font-size: 30px;
+    font-weight: 500;
+  }
+  
+  ol, ul, dl{
+      margin-bottom: 0!important;
+  }
+  
+  ol, ul{
+    padding-left: 0;
+    width: auto;
+  }
+  
+  .row{
+    padding-right: 30px;
+  }
+  
+  @media all and (max-width: 260px) {
+    .vega-logo{
+      display: none;
+    }
+  }
+
+.app-container{
+    background-color: #F7F7F7;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+    position:absolute;
+    top:50px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+
+    .content-container{
+        width: 1200px;
+
+        .row{
+            margin-top: 15px;
+        }
+    }
+}
+
+
+@media all and (max-width: 968px) {
+    .app-container{
+        padding: 0!important;
+
+        .content-container{
+            padding: 20px;
+            width: 100%;
+        }
+    }
+}

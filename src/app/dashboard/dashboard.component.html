@@ -1,0 +1,49 @@
+<div class="main-container">
+    <div class="table-header">
+        <form  class="add-payment" (ngSubmit)="save()" [formGroup]="formControl">
+            <span>Add Data</span>
+            <input type="text" formControlName="payment_name">
+            <button class="primary-button" type="submit">Add</button>
+        </form>
+        <div class="action-area">
+            <input (change)="fetchPaymentList('1', $event)" type="text" placeholder="search by name" *ngIf="filter">
+            <button class="primary-button"
+                    style="margin-right: 10px;"
+                    (click)="filter = !filter"
+                    type="button">
+                    Filter
+            </button>
+            <button class="delete-button"
+                type="button"
+                [disabled]="getSelectedItem.length <= 1"
+                (click)="delete(true)">
+                Bulk Delete
+            </button>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th></th>
+            <th>Payment Name</th>
+            <th colspan="2">Created</th>
+        </tr>
+        <tr *ngFor="let item of data | paginate: config" (click)="onRowClick(item.id)" >
+            <td>
+                <img [src]="rowIsSelected(item.id) ? '../../assets/checked.svg' : '../../assets/null.svg'">
+            </td>
+            <td>{{item.payment_name}}</td>
+            <td>{{item.created_at | date:"MM/dd/yyyy"}}</td>
+            <td>
+                <button class="delete-button"
+                        type="button"
+                        [disabled]="getSelectedItem.length > 1 "
+                        (click)="delete(false, item.id)">
+                        Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div class="pagination-section">
+        <app-pagination [id]="config.id" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+</div>
